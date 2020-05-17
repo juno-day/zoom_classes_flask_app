@@ -1,0 +1,10 @@
+{
+    "classes": {
+        "Python": {
+            "Teacher": "Vivek Ladha",
+            "Users": ["Shray Saboo", "Shorya Malani"],
+            "Description": "We will be learning python",
+            "Files": ["python/curriculum.txt"]
+        }
+    }
+}
