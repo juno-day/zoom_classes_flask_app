@@ -5,8 +5,10 @@ function submit_text() {
 }
 
 
-socket.on("send_data_back", function(data) {
-    document.getElementById("result").textContent = data["data"]
+socket.on("user_data_back", function(data) {
+    if (!(data["classes"])) {
+        alert("You are not signed up for any classes yet.")
+    }
 })
 
 // GOOGLE STUFF
@@ -33,14 +35,9 @@ function onSignIn(googleUser) {
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
     console.log("ID Token: " + id_token);
-    fetch("/get_user_data", {
-        method: 'POST',
-        body: JSON.stringify({
-            "name": profile.getName()
-        })
-    }).then(response => {
-        response.json().then(json => {
-            document.getElementById("body").hidden = false
-        })
-    })
+    after_login()
+}
+
+function after_login() {
+    socket.emit("get_user_data", { "user": profile.getEmail() })
 }
