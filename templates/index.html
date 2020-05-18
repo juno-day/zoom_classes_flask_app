@@ -5,9 +5,12 @@
     <link rel="stylesheet" href="../static/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta name="google-signin-client_id" content="869985163537-udfcmpaiiud1ej46aleicfgb66egtnab.apps.googleusercontent.com">
 </head>
 
 <body>
+    <a unsafe-inline class="g-signin2" data-onsuccess="onSignIn">sign in</a>
     <input id="text" type="text">
     <button onclick="submit_text()">Submit</button>
     <p>Output:<span id="result"></span></p>
