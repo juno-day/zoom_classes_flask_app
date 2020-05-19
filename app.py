@@ -24,7 +24,11 @@ def get_user_data(data):
     with open("users.json","r") as f:
         users = json.load(f)
         if data["user"] not in users:
+<<<<<<< HEAD
             users[data["user"]] = {"classes":[],"teaching":[]}
+=======
+            users[data["user"]] = {"classes":[],"teach":[]}
+>>>>>>> 421c949466b075fc989ebb9add04839402a88183
             with open("users.json","w") as f:
                 json.dump(users,f)
             return users[data["user"]]
