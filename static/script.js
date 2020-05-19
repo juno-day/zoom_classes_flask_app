@@ -6,7 +6,7 @@ function submit_text() {
 
 
 socket.on("user_data_back", function(data) {
-    if (!(data["classes"])) {
+    if (data["classes"].length() == 0) {
         alert("You are not signed up for any classes yet.")
     }
 })
@@ -24,20 +24,14 @@ var profile;
 function onSignIn(googleUser) {
     // Useful data for your client-side scripts:
     profile = googleUser.getBasicProfile();
-    console.log("ID: " + profile.getId()); // Don't send this directly to your server!
-    console.log("test")
-    console.log('Full Name: ' + profile.getName());
-    console.log('Given Name: ' + profile.getGivenName());
-    console.log('Family Name: ' + profile.getFamilyName());
-    console.log("Image URL: " + profile.getImageUrl());
-    console.log("Email: " + profile.getEmail());
 
     // The ID token you need to pass to your backend:
     var id_token = googleUser.getAuthResponse().id_token;
+    profile.id_token = id_token
     console.log("ID Token: " + id_token);
     after_login()
 }
 
 function after_login() {
-    socket.emit("get_user_data", { "user": profile.getEmail() })
+    socket.emit("get_user_data", { "user": profile.id_token, "image_url": profile.getImageUrl() })
 }
