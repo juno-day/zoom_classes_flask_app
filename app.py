@@ -25,7 +25,7 @@ def get_user_data(data):
         users = json.load(f)
         if data["user"] not in users:
             with open("users.json","w") as f:pass
-            users[data["user"]] = {"classes":[],"teaching":[],"user":{"image":data["image_url"],"emails":{}}}
+            users[data["user"]] = {"classes":[],"teaching":[],"user":{"name":data["name"],"image":data["image_url"],"emails":{}}}
             with open("users.json","w") as f:
                 json.dump(users,f)
             return users[data["user"]]

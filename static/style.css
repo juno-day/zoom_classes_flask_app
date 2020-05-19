@@ -1,5 +1,22 @@
 body {
-    background-color: #013547;
+    background-color: #053b4d;
     text-align: center;
-    padding: 1em
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.nav_buttons {
+    background: rgb(28, 184, 65);
+    height: 2em;
+    margin: 30px;
+    font-size: 200%;
+    color: white;
+    border-radius: 4px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }

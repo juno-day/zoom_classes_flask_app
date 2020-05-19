@@ -2,16 +2,28 @@
 
 <head>
     <title>Log In</title>
-    <link rel="stylesheet" href="../static/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="google-signin-client_id" content="869985163537-udfcmpaiiud1ej46aleicfgb66egtnab.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js"></script>
+    <link rel="stylesheet" href="../static/style.css">
 </head>
 
 <body>
-    <center><a unsafe-inline class="g-signin2" data-onsuccess="onSignIn">sign in</a></center>
+    <div id="sign_in_section">
+        <center>
+            <a unsafe-inline class="g-signin2" data-onsuccess="onSignIn"></a>
+        </center>
+        <center>
+            <p> After you log in with google you will be presented with how you would like to log in. This will include logging in as a teacher or a student. As a student you can join classes and more functionality such as commenting on classes will be coming
+                soon. As a teacher you can set up classes which includes setting dates for classes, homework, class descriptions, prerequisites, and send reminders via email(Coming soon). </p>
+        </center>
+    </div>
+    <div class="pure-button-group" id="pick_teacher_or_student" role="group" hidden=true>
+        <button class="pure-button nav_buttons">Student</button>
+        <button class="pure-button nav_buttons">Teacher</button>
+    </div>
 </body>
 
 <script src="../static/script.js"></script>
