@@ -6,7 +6,7 @@ function submit_text() {
 
 
 socket.on("user_data_back", function(data) {
-    info = data["classes"]
+    info = data["data"]
     if (info["classes"].length == 0) {
         alert("You are not signed up for any classes yet.")
     }
