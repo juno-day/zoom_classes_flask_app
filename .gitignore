@@ -15,7 +15,7 @@ Thumbs.db
 
 # Compiled C++ files
 *.out
-users.json
+
 # Application specific files
 venv
 node_modules
@@ -23,3 +23,5 @@ node_modules
 .vscode
 .venv
 .envrc
+
+users.json
